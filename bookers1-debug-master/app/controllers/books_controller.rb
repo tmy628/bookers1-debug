@@ -10,6 +10,8 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book.id)
     else
+      @books = Book.all
+      #  一度、投稿一覧を読み込ませる動作を行う必要がある
       render :index
     end
   end
